@@ -5,7 +5,7 @@ import React, {
   SetStateAction,
   useState,
 } from "react";
-import { ConfigProvider, Flex,  message, theme, Tour } from "antd";
+import { ConfigProvider, Flex, message, theme, Tour } from "antd";
 
 type ToastFunction = (msg: any) => void;
 
@@ -75,30 +75,28 @@ function GlobalProvider(props: GlobleContextProviderProps) {
   };
 
   return (
-    <Flex gap={"small"} vertical>
-        <GlobalContext.Provider
-          value={{ ...props, loading, setLoading, selectedFiles, setSelectedFile, Toast } as any}
-        >
-          <ConfigProvider
-            // direction={locale == ar_EG ? 'rtl' : 'ltr'}
-            // locale={locale}
+    <GlobalContext.Provider
+      value={{ ...props, loading, setLoading, selectedFiles, setSelectedFile, Toast } as any}
+    >
+      <ConfigProvider
+        // direction={locale == ar_EG ? 'rtl' : 'ltr'}
+        // locale={locale}
 
-            theme={{
-              algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
-              // token: {
-              //   colorPrimary: colorPrimary,
-              //   fontFamily: montserrat.style.fontFamily,
-              // },
-              components: {
+        theme={{
+          algorithm: isDarkMode ? darkAlgorithm : defaultAlgorithm,
+          // token: {
+          //   colorPrimary: colorPrimary,
+          //   fontFamily: montserrat.style.fontFamily,
+          // },
+          components: {
 
-              },
-            }}
-          >
-            {props.children}
-            {contextHolder}
-          </ConfigProvider>
-        </GlobalContext.Provider>
-    </Flex>
+          },
+        }}
+      >
+        {props.children}
+        {contextHolder}
+      </ConfigProvider>
+    </GlobalContext.Provider>
   );
 }
 

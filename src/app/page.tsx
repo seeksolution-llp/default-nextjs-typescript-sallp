@@ -1,11 +1,11 @@
-// import AuthLayout from "@/components/auth/AuthLayout";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-const AuthLayout = dynamic(()=>import("@/components/auth/AuthLayout"),{ ssr:false})
+const StickyHomeLayout = dynamic(() => import("@/components/home/StickyHomeLayout"), { ssr: false })
+const HomePage = dynamic(() => import("@/components/home/HomePage"), { ssr: false })
 
 export default function Home() {
   return (
-  <> I am Default page
-  </>
+    <StickyHomeLayout>
+      <HomePage />
+    </StickyHomeLayout>
   );
 }

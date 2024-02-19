@@ -1,4 +1,4 @@
-import HomeLayout from "@/components/home/HomeLayout";
+import HomeLayout from "@/components/home/StickyHomeLayout";
 import type { Metadata } from "next";
 
 
